@@ -16,7 +16,7 @@ public class Email {
     public Email(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Email has been created: " + this.firstName + " " + this.lastName);
+        System.out.println("User Information: " + this.firstName + " " + this.lastName);
 
         // Call a method that asks for department and returns department
         this.department = setDepartment();
@@ -28,7 +28,7 @@ public class Email {
 
         // Combine elements to generate emails with firstname.lastname@department.company.com format
         this.email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" +
-                (department.equals("None") ? "" : department.toLowerCase() + ".") + companySuffix;
+                (department.equals("None") ? "" : department.toLowerCase()) + companySuffix;
         System.out.println("Your Email is: " + email);
     }
 
@@ -92,7 +92,7 @@ public class Email {
 
     // Show info about the user
     public String showInfo() {
-        return "Display Name: " + firstName + " " + lastName +
+        return "Display Name: " + firstName + lastName +
                 "\nCompany Email: " + email +
                 "\nMailbox Capacity: " + mailboxCapacity + "mb";
     }
